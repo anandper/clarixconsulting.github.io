@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clarix palette — warm ivory + deep navy + brass accent */
+    --background: 40 33% 97%;
+    --foreground: 220 45% 11%;
+
+    --card: 40 33% 99%;
+    --card-foreground: 220 45% 11%;
+
+    --popover: 40 33% 99%;
+    --popover-foreground: 220 45% 11%;
+
+    --primary: 220 55% 14%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 220 45% 11%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 15% 38%;
+
+    --accent: 32 55% 48%;
+    --accent-foreground: 40 33% 97%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 30 18% 86%;
+    --input: 30 18% 86%;
+    --ring: 220 55% 14%;
+
+    --radius: 0.25rem;
+
+    /* Brand semantics */
+    --ink: 220 55% 14%;
+    --ink-soft: 220 35% 25%;
+    --ivory: 40 33% 97%;
+    --ivory-warm: 38 38% 94%;
+    --brass: 32 55% 48%;
+    --brass-soft: 36 60% 70%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 10%) 0%, hsl(220 50% 18%) 60%, hsl(220 45% 25%) 100%);
+    --gradient-ivory: linear-gradient(180deg, hsl(40 33% 97%) 0%, hsl(38 38% 94%) 100%);
+    --gradient-brass: linear-gradient(135deg, hsl(32 60% 52%), hsl(36 65% 62%));
+
+    --shadow-elegant: 0 30px 80px -30px hsl(220 60% 10% / 0.25);
+    --shadow-soft: 0 10px 40px -10px hsl(220 60% 10% / 0.12);
+    --shadow-card: 0 1px 0 hsl(30 18% 86%), 0 20px 40px -25px hsl(220 60% 10% / 0.15);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 220 45% 11%;
+    --sidebar-primary: 220 55% 14%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 220 45% 11%;
+    --sidebar-border: 30 18% 86%;
+    --sidebar-ring: 220 55% 14%;
+  }
+
+  .dark {
+    --background: 220 50% 8%;
+    --foreground: 40 33% 95%;
+    --card: 220 50% 10%;
+    --card-foreground: 40 33% 95%;
+    --popover: 220 50% 10%;
+    --popover-foreground: 40 33% 95%;
+    --primary: 40 33% 95%;
+    --primary-foreground: 220 55% 14%;
+    --secondary: 220 35% 16%;
+    --secondary-foreground: 40 33% 95%;
+    --muted: 220 35% 16%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 32 55% 55%;
+    --accent-foreground: 220 55% 14%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 40 33% 95%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: "ss01";
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .hairline { border-color: hsl(var(--border)); }
+  .container-tight { @apply mx-auto w-full max-w-6xl px-6 md:px-10; }
+  .container-narrow { @apply mx-auto w-full max-w-4xl px-6 md:px-10; }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 400ms var(--transition-smooth);
+  }
+  .link-underline:hover { background-size: 0% 1px; background-position: 100% 100%; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-up { animation: fade-up 0.8s var(--transition-smooth) both; }
+.animate-fade-in { animation: fade-in 1.2s var(--transition-smooth) both; }
