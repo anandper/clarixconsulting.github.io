@@ -164,11 +164,7 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12">
-            <Button asChild variant="ink" size="lg">
-              <Link to="/software">See software case studies <ArrowRight /></Link>
-            </Button>
-          </div>
+          
         </div>
       </section>
 
