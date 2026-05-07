@@ -28,12 +28,6 @@ const industries = [
     pains: "Technology delivery, compliance programs, operational modernization",
     body: "FinServ demands both regulatory discipline and aggressive modernization. We've led portfolio rationalization, vendor consolidation, and technology delivery programs that cut cost while strengthening controls.",
   },
-  {
-    icon: Factory,
-    name: "Manufacturing",
-    pains: "AS9100D, ISO/IEC 17025, process automation, delivery programs",
-    body: "From AS9100D and ISO/IEC 17025 readiness to AI-driven SDLC and process automation, we help manufacturers translate quality systems and modern engineering into measurable throughput gains.",
-  },
 ];
 
 const Industries = () => (

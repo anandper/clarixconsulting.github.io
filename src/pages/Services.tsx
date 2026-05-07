@@ -13,7 +13,7 @@ const sections = [
       "QMS / eQMS implementation & management",
       "Risk management & CAPA",
       "Training program design",
-      "Audit execution & readiness (MDSAP, EU MDR, ISO 13485, QMSR, AS9100D, ISO/IEC 17025)",
+      "Audit execution & readiness (MDSAP, EU MDR, ISO 13485, QMSR)",
       "Regulatory strategy & submissions",
       "Remediation & compliance",
       "EU MDR & QMSR transitions",
