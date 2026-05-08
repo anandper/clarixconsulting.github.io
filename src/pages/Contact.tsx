@@ -170,7 +170,7 @@ const Contact = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://calendly.com" target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+                  <a href="https://calendly.com/clarix" target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
                     <span className="size-10 grid place-items-center border border-border group-hover:bg-brass group-hover:border-brass transition-colors flex-none text-ink">
                       <Calendar className="size-4" />
                     </span>
