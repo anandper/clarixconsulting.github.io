@@ -13,9 +13,9 @@ import { PageHero } from "@/components/site/PageHero";
 // ─────────────────────────────────────────────
 // 1.  PASTE YOUR EMAILJS CREDENTIALS HERE
 // ─────────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "aBcDeFgHiJkLmNoP"
+const EMAILJS_SERVICE_ID  = "service_53s8w0m";   // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "template_f8e7luc";  // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY  = "t0aoFHKz_g8ALqlIc";   // e.g. "aBcDeFgHiJkLmNoP"
 // ─────────────────────────────────────────────
 
 const TOPIC_LABELS: Record<string, string> = {
