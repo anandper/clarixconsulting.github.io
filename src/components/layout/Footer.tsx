@@ -14,7 +14,7 @@ export const Footer = () => (
             Senior consulting leadership for Quality & Regulatory transformation, Software Delivery, and Program Management.
           </p>
           <div className="mt-8 flex items-center gap-4">
-            <a href="mailto:anand@clarixconsulting.com" className="size-10 grid place-items-center border border-ivory/20 hover:bg-ivory hover:text-ink transition-colors" aria-label="Email">
+            <a href="mailto:contact@clarixconsulting.com" className="size-10 grid place-items-center border border-ivory/20 hover:bg-ivory hover:text-ink transition-colors" aria-label="Email">
               <Mail className="size-4" />
             </a>
             <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="size-10 grid place-items-center border border-ivory/20 hover:bg-ivory hover:text-ink transition-colors" aria-label="LinkedIn">
@@ -44,13 +44,13 @@ export const Footer = () => (
         <div className="md:col-span-2">
           <div className="text-xs uppercase tracking-[0.2em] text-ivory/50 mb-4">Contact</div>
           <ul className="space-y-3 text-sm text-ivory/80">
-            <li><a href="mailto:anand@clarixconsulting.com" className="hover:text-ivory">anand@<br/>clarixconsulting.com</a></li>
+            <li><a href="mailto:contact@clarixconsulting.com" className="hover:text-ivory">contact@<br/>clarixconsulting.com</a></li>
           </ul>
         </div>
       </div>
 
       <div className="mt-16 pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-ivory/50">
-        <div>© {new Date().getFullYear()} Clarix Consulting Group. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Clarix Consulting Group LLC. All rights reserved.</div>
         <div>Clarity. Delivered.</div>
       </div>
     </div>
