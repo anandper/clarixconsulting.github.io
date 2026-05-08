@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { Linkedin, Mail, Calendar, Clock, ArrowRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,12 +10,27 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { PageHero } from "@/components/site/PageHero";
 
+// ─────────────────────────────────────────────
+// 1.  PASTE YOUR EMAILJS CREDENTIALS HERE
+// ─────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "aBcDeFgHiJkLmNoP"
+// ─────────────────────────────────────────────
+
+const TOPIC_LABELS: Record<string, string> = {
+  quality:  "Quality & Regulatory",
+  software: "Software Delivery",
+  program:  "Project Management",
+  unsure:   "Not Sure Yet",
+};
+ 
 const schema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
+  name:    z.string().trim().min(1, "Name is required").max(100),
   company: z.string().trim().min(1, "Company is required").max(120),
-  email: z.string().trim().email("Enter a valid email").max(255),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
-  topic: z.string().min(1, "Please select an option"),
+  email:   z.string().trim().email("Enter a valid email").max(255),
+  phone:   z.string().trim().max(40).optional().or(z.literal("")),
+  topic:   z.string().min(1, "Please select an area"),
   message: z.string().trim().min(1, "Please share a few details").max(2000),
 });
 
@@ -22,8 +38,9 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [topic, setTopic] = useState("");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const fd = new FormData(e.currentTarget);
     const data = {
       name: String(fd.get("name") ?? ""),
@@ -33,18 +50,41 @@ const Contact = () => {
       topic,
       message: String(fd.get("message") ?? ""),
     };
+
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       toast.error(parsed.error.issues[0]?.message ?? "Please check the form");
       return;
     }
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Thank you — we'll respond within 1 business day.");
+
+    try {
+      // EmailJS sends the template variables below to your inbox
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:    data.name,
+          from_company: data.company,
+          from_email:   data.email,
+          from_phone:   data.phone || "—",
+          topic:        TOPIC_LABELS[data.topic] ?? data.topic,
+          message:      data.message,
+          reply_to:     data.email,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+ 
+      toast.success("Message sent — we'll be in touch within 1 business day.");
       (e.target as HTMLFormElement).reset();
       setTopic("");
-    }, 700);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Something went wrong. Please email us directly at anand@clarixconsulting.com");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -119,7 +159,7 @@ const Contact = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+                  <a href="https://www.linkedin.com/in/avidyarthi" target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
                     <span className="size-10 grid place-items-center border border-border group-hover:bg-brass group-hover:border-brass transition-colors flex-none text-ink">
                       <Linkedin className="size-4" />
                     </span>
