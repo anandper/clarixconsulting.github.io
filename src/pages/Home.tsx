@@ -134,7 +134,7 @@ const Home = () => {
           <div className="md:col-span-5">
             <SectionHeader eyebrow="Why Clarix" title="Senior operators. Regulated reality." />
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Most firms send junior staff with a playbook. We send the principal who's already done it — at scale, in your industry, with the audit trail to prove it.
+              Most firms send junior staff with a playbook. We send the principal who's already done it at scale, in your industry, with the audit trail to prove it.
             </p>
           </div>
           <div className="md:col-span-7 grid sm:grid-cols-2 gap-px bg-border border border-border">

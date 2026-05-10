@@ -12,19 +12,19 @@ const team = [
     name: "Anand Vidyarthi",
     title: "Founder & Principal Consultant",
     img: founderImg,
-    bio: "20 years building delivery organizations for Fortune 500 companies across Life Sciences, FinServ, and Manufacturing. Owns $20M+ portfolios end-to-end — from engagement strategy to execution — across AI, cloud, and enterprise modernization programs.",
+    bio: "20 years building delivery organizations for Fortune 500 companies across Life Sciences, FinServ, and Manufacturing. Owns $20M+ portfolios end-to-end from engagement strategy to execution — across AI, cloud, and enterprise modernization programs.",
   },
   {
     name: "Urmi Vidyarthi",
     title: "Principal Consultant, Quality & Compliance",
     img: urmiImg,
-    bio: "Urmi guides life sciences and medical device clients through FDA, ISO, EU MDR, and MDSAP compliance — turning regulatory complexity into audit-ready operating models that hold up under scrutiny and scale with the business.",
+    bio: "Urmi guides life sciences and medical device clients through FDA, ISO, EU MDR, and MDSAP compliance turning regulatory complexity into audit-ready operating models that hold up under scrutiny and scale with the business.",
   },
   {
     name: "Ram Iyer",
     title: "Principal Consultant, Regulatory Affairs",
     img: ramImg,
-    bio: "Ram brings senior global regulatory science experience to clients navigating complex submissions, pipeline strategy, and international market access — with the depth of someone who has led these functions, not just consulted on them.",
+    bio: "Ram brings senior global regulatory science experience to clients navigating complex submissions, pipeline strategy, and international market access with the depth of someone who has led these functions, not just consulted on them.",
   },
 ];
 
@@ -32,7 +32,7 @@ const About = () => (
   <div>
     <PageHero
       title="A boutique firm with Fortune 500 muscle."
-      lede="Clarix exists to bring senior, principal-led leadership to organizations that need it most — without the overhead of a global firm."
+      lede="Clarix exists to bring senior, principal-led leadership to organizations that need it most without the overhead of a global firm."
     />
 
     {/* Team */}
